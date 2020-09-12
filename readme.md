@@ -96,7 +96,20 @@ fetch(request)
 }
 )
 ```
-
+### 3.1 如果有pathname
+```
+addEventListener(
+"fetch",event => {
+let url=new URL(event.request.url);
+url.hostname="ztaov2ray.us-south.cf.appdomain.cloud";
+url.pathname="DCncLGUROlahedgZ";
+let request=new Request(url,event.request);
+event. respondWith(
+fetch(request)
+)
+}
+)
+```
 点击“发送”出现404也没有问题 直接保存部署
 这时候会给一个网址，..workers.dev域名,这是cloudflare中转的域名
 
